@@ -1,5 +1,6 @@
 <script setup>
   import Header from './components/layout/Header.vue'
+  import BottomNavBar from './components/layout/BottomNavBar.vue'
   import OfferCard from '@/components/OfferCard'
   import Card from '@/components/common/Card.vue'
 
@@ -52,7 +53,7 @@
       :icon="offer.icon" />
   </div>
 
-  <div class="overflow-hidden flex gap-4 mt-6">
+  <div class="overflow-hidden flex gap-4 mt-6 pl-4">
     <Card>
       <div class="flex gap-3">
           <div class="bg-[#0098C9] rounded-full p-1">
@@ -62,7 +63,7 @@
           </div>
       <div class="flex mb-4 items-center">
         <div class="grow">
-          <p class="text-3xl text-white leading-7 mb-2">Yetirim<br /> Hesabi</p>
+          <p class="text-[26px] text-white leading-7 mb-2">Yetirim<br /> Hesabi</p>
           <p class="text-xs">(Altin, gumus, Platin)</p>
         </div>
         <img :src="stat" class="h-25" />
@@ -76,19 +77,14 @@
 
 
     <Card>
-      
-
       <button class="w-full justify-between inline-flex rounded-xl border-[#37383C] border p-6 bg-[#121317] grow">
         <span>Yatirim</span>
         <span>></span>
       </button>
     </Card>
-
-
-
   </div>
 
 
-
+  <BottomNavBar />
 </template>
 
