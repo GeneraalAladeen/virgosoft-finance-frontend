@@ -17,7 +17,7 @@
 
 <template>
     <div :class="[ 
-        'rounded-xl grow-0 border border-sm border-[#37383C] p-4',
+        'rounded-xl grow-0 border border-[#37383C] p-4',
         {
             'bg-[#323232]': fill
         }
