@@ -4,6 +4,7 @@
   import OfferCard from '@/components/OfferCard'
   import TransactionHistory from '@/components/TransactionHistory'
   import Card from '@/components/common/Card.vue'
+  import Carousel from '@/components/common/Carousel.vue'
   import PromoCard from '@/components/PromoCard'
 
   import superman from '@/assets/superman.svg';
@@ -94,35 +95,70 @@
       :icon="offer.icon" />
   </div>
 
-  <div class="overflow-hidden flex gap-4 mt-6 pl-4">
-    <Card>
-      <div class="flex gap-3">
-          <div class="bg-[#0098C9] rounded-full p-1">
-            <Icon icon="carbon:analytics" :height="14" color="#fff" />
+  <div class="mt-6 pl-4">
+    <Carousel :item-count="3">
+        <Card>
+          <div class="flex gap-3">
+              <div class="bg-[#0098C9] rounded-full p-1">
+                <Icon icon="carbon:analytics" :height="14" color="#fff" />
+              </div>
+    
+              </div>
+          <div class="flex mb-4 items-center">
+            <div class="grow">
+              <p class="text-[26px] font-medium text-white leading-7 mb-2">Yetirim<br /> Hesabi</p>
+              <p class="text-xs text-[#6A6B6F]">(Altin, gumus, Platin)</p>
+            </div>
+            <img :src="stat" class="h-25" />
           </div>
+    
+          <button class="w-full justify-between items-center inline-flex rounded-xl border-[#37383C] border p-4 bg-[#121317]">
+            <span class="text-white">Yatirim hesabi Olustur</span>
+            <Icon icon="tabler:chevron-right" color="#fff" />
+          </button>
+        </Card>
 
+        <Card>
+          <div class="flex gap-3">
+              <div class="bg-[#0098C9] rounded-full p-1">
+                <Icon icon="carbon:analytics" :height="14" color="#fff" />
+              </div>
+    
+              </div>
+          <div class="flex mb-4 items-center">
+            <div class="grow">
+              <p class="text-[26px] font-medium text-white leading-7 mb-2">Yetirim<br /> Hesabi</p>
+              <p class="text-xs text-[#6A6B6F]">(Altin, gumus, Platin)</p>
+            </div>
+            <img :src="stat" class="h-25" />
           </div>
-      <div class="flex mb-4 items-center">
-        <div class="grow">
-          <p class="text-[26px] font-medium text-white leading-7 mb-2">Yetirim<br /> Hesabi</p>
-          <p class="text-xs text-[#6A6B6F]">(Altin, gumus, Platin)</p>
-        </div>
-        <img :src="stat" class="h-25" />
-      </div>
-
-      <button class="w-full justify-between items-center inline-flex rounded-xl border-[#37383C] border p-4 bg-[#121317]">
-        <span class="text-white">Yatirim hesabi Olustur</span>
-        <Icon icon="tabler:chevron-right" color="#fff" />
-      </button>
-    </Card>
-
-
-    <Card>
-      <button class="w-full justify-between items-center inline-flex rounded-xl border-[#37383C] border p-4 bg-[#121317]">
-        <span class="text-white">Yatirim</span>
-        <Icon icon="tabler:chevron-right" color="#fff" />
-      </button>
-    </Card>
+    
+          <button class="w-full justify-between items-center inline-flex rounded-xl border-[#37383C] border p-4 bg-[#121317]">
+            <span class="text-white">Yatirim hesabi Olustur</span>
+            <Icon icon="tabler:chevron-right" color="#fff" />
+          </button>
+        </Card>
+         <Card>
+          <div class="flex gap-3">
+              <div class="bg-[#0098C9] rounded-full p-1">
+                <Icon icon="carbon:analytics" :height="14" color="#fff" />
+              </div>
+    
+              </div>
+          <div class="flex mb-4 items-center">
+            <div class="grow">
+              <p class="text-[26px] font-medium text-white leading-7 mb-2">Yetirim<br /> Hesabi</p>
+              <p class="text-xs text-[#6A6B6F]">(Altin, gumus, Platin)</p>
+            </div>
+            <img :src="stat" class="h-25" />
+          </div>
+    
+          <button class="w-full justify-between items-center inline-flex rounded-xl border-[#37383C] border p-4 bg-[#121317]">
+            <span class="text-white">Yatirim hesabi Olustur</span>
+            <Icon icon="tabler:chevron-right" color="#fff" />
+          </button>
+        </Card>
+    </Carousel>
   </div>
 
   <div class="gap-2 ">
