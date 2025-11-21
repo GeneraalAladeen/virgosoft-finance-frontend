@@ -53,7 +53,7 @@ const getAmountClass = (transaction) => {
         No transactions found.
       </div>
 
-      <div v-else class="flex flex-col gap-6">
+      <div v-else class="flex flex-col gap-4">
         <div
           v-for="transaction in transactions"
           :key="transaction.id"

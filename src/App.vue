@@ -6,6 +6,7 @@
   import Card from '@/components/common/Card.vue'
   import Carousel from '@/components/common/Carousel.vue'
   import PromoCard from '@/components/PromoCard'
+  import ActionCard from '@/components/ActionCard'
 
   import superman from '@/assets/superman.svg';
   import garanti from '@/assets/garanti.png';
@@ -92,7 +93,7 @@
 <template>
   <Header />
 
-  <div class="overflow-hidden flex mb-4 pl-3">
+  <div class="mb-2 pl-3">
     <Carousel :item-count="offers.length" :show-indicators="false">
       <OfferCard 
         v-for="(offer, index) in offers" 
@@ -103,7 +104,7 @@
     </Carousel>
   </div>
 
-  <div class="mt-6 pl-4">
+  <div class="mt-4 pl-4">
     <Carousel :item-count="3">
         <Card>
           <div class="flex gap-3">
@@ -169,15 +170,25 @@
     </Carousel>
   </div>
 
-  <div class="gap-2 ">
-    <div class="flex justify-between p-4">
+  <section class="p-4">
+    <ActionCard 
+      :notification-count="5"
+      icon="streamline-ultimate:analytics-board-graph-line"
+      time="Bugun 08:00"
+      title="Aylik hesap ozetin olustruldu"
+      description=" hesap Aylik olustruldu Aylik olustruldu"
+     />
+  </section>
+
+  <div class="mt-2">
+    <div class="flex justify-between px-4 pb-3">
       <div class="flex items-center gap-2 ">
           <p class="text-xs text-[#6A6B6F]">DAHA IYI BIR PAPARA DENEYIMI</p>
           <Icon icon="mingcute:arrow-right-line" />
       </div>
-      <p class="text-[#DCA36C]">{{ currentPromoPage }} / 5</p>
+      <p class="text-[#DCA36C] text-xs">{{ currentPromoPage }} / 5</p>
     </div>
-    <div class="overflow-hidden gap-2  flex mb-2 px-4">
+    <div class=" px-4">
       <Carousel @current-page="handlePageChange"  :item-count="promos.length" :show-indicators="false">
         <PromoCard 
           v-for="(promo, index) in promos"

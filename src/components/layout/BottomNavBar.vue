@@ -40,7 +40,7 @@
 
 <template>
     <nav class="fixed bottom-0 left-0 right-0 bg-[#121317]">
-    <div class="flex justify-around items-center py-2">
+    <div class="flex justify-around items-center py-1">
       <button
         v-for="item in navItems"
         :key="item.name"
@@ -53,12 +53,12 @@
         ]"
       >
         <Icon 
-            :height="30"
+            :height="26"
           :icon="item.icon" 
           class="text-2xl mb-1 transition-all duration-200"
        
         />
-        <span class="text-xs ">{{ item.name }}</span>
+        <span class="text-[10px]">{{ item.name }}</span>
       </button>
     </div>
   </nav>
