@@ -1,9 +1,9 @@
 <script setup>
-    import { defineProps } from 'vue'
+    import { defineProps , ref} from 'vue'
 
     import { Icon } from "@iconify/vue";
 
-    defineProps({
+    const props = defineProps({
         pinned: {
             type: Boolean,
             default: false
@@ -17,18 +17,22 @@
             required: true
         }
     })
+
+    const isPinned = ref(props.pinned)
+
+    const togglePin = () => isPinned.value = !isPinned.value
+    
 </script>
 
 <template>
-    <div class="flex flex-col items-center w-20 gap-2 grow-0 shrink-0">
-        <div class="relative rounded-full grow-0 border-3 p-1 border-white">
-            <div v-show="pinned" class="absolute rounded-full top-0 -right-2 p-1 bg-white">
+    <button @click="togglePin" class="flex flex-col items-center w-20 gap-2 grow-0 shrink-0">
+        <div class="relative rounded-full grow-0 border-3 p-2 border-white">
+            <div v-show="isPinned" class="absolute rounded-full top-0 -right-2 p-1 bg-white">
                 <Icon icon="sidekickicons:pin-20-solid" :height="18" color="#000"  />
             </div>
-            <img :src="icon" class="h-12 w-12" />
+            <img :src="icon" class="h-10 w-10" />
         </div>
         <p class="text-xs text-center text-[#FDFEFF/1] leading-3">{{  text }}</p>
-    </div>
-
+    </button>
 </template>
 
