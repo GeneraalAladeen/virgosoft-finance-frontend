@@ -8,11 +8,14 @@
   import PromoCard from '@/components/PromoCard'
   import ActionCard from '@/components/ActionCard'
 
-  import superman from '@/assets/superman.svg';
-  import garanti from '@/assets/garanti.png';
+  import superman from '@/assets/images/superman.svg';
+  import garanti from '@/assets/images/garanti.png';
 
-  import stat from '@/assets/stat.png';
-  import web from '@/assets/web.png';
+  import stat from '@/assets/images/stat.png';
+  import web from '@/assets/images/web.png';
+  import graph from '@/assets/images/graph.png';
+  import gift from '@/assets/images/gift.png';
+  import money from '@/assets/images/money.png';
 
   import { Icon } from "@iconify/vue";
   import { computed , ref } from 'vue'
@@ -63,7 +66,7 @@
 
   const offers = [
     {
-      icon: superman,
+      icon: money,
       text:'Papara Sticker Card',
       pinned: true
     },
@@ -73,17 +76,17 @@
       pinned: true
     },
       {
-      icon: superman,
+      icon: gift,
       text:'e-Sans 150 TL Hediye',
       pinned: false
     },
       {
-      icon: superman,
+      icon: stat,
       text:'Yatirim Hesabi',
       pinned: false
     },
       {
-      icon: superman,
+      icon: graph,
       text:'Altin Hediye',
       pinned: false
     },
@@ -121,7 +124,7 @@
             <img :src="stat" class="h-25" />
           </div>
     
-          <button class="w-full justify-between items-center inline-flex rounded-xl border-[#37383C] border p-4 bg-[#121317]">
+          <button class="w-full justify-between items-center inline-flex rounded-xl border-[#37383C] border p-3.5 bg-[#121317]">
             <span class="text-white">Yatirim hesabi Olustur</span>
             <Icon icon="tabler:chevron-right" color="#fff" />
           </button>
