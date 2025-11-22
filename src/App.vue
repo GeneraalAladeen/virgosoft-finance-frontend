@@ -133,7 +133,7 @@
         <Icon icon="circle-flags:us" :height="24" />
       </AccountCard>
       <AccountCard
-        title="Kiyetli Madenler"
+        title="Kiymetli Madenler"
         description="(Altin, gumus, Platin)"
         buttonLabel="Kiymetli Madenler Hesabi Ac"
         :image="bar"
