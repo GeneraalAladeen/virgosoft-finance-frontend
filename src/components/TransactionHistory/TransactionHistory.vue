@@ -2,6 +2,9 @@
 import { computed, defineProps, defineEmits } from 'vue'
 import { Icon } from "@iconify/vue";
 
+import { formatAmount } from '@/utils/formatter.js'
+
+
 
 const props = defineProps({
   transactions: {
@@ -13,20 +16,6 @@ const props = defineProps({
     default: false,
   },
 })
-
-
-const formatAmount = (amount, options = {}) => {
-  if (amount === null || amount === undefined || isNaN(amount)) {
-    return ''
-  }
-
-  return new Intl.NumberFormat('tr-TR', {
-    style: 'currency',
-    currency: 'TRY',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(amount)
-}
 
 
 const getAmountClass = (transaction) => {

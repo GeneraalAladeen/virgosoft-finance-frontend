@@ -4,6 +4,7 @@
   import OfferCard from '@/components/OfferCard'
   import TransactionHistory from '@/components/TransactionHistory'
   import Card from '@/components/common/Card.vue'
+  import Switch from '@/components/common/Switch.vue'
   import Carousel from '@/components/common/Carousel.vue'
   import PromoCard from '@/components/PromoCard'
   import ActionCard from '@/components/ActionCard'
@@ -15,7 +16,6 @@
 
   import superman from '@/assets/images/superman.svg';
   import garanti from '@/assets/images/garanti.png';
-
   import stat from '@/assets/images/stat.png';
   import web from '@/assets/images/web.png';
   import graph from '@/assets/images/graph.png';
@@ -26,6 +26,8 @@
 
   import { Icon } from "@iconify/vue";
   import { computed , ref } from 'vue'
+
+  import { formatAmount } from '@/utils/formatter.js'
 
   const currentPromoPage = ref(1)
 
@@ -115,7 +117,7 @@
   </div>
 
   <div class="mt-4 pl-4">
-    <Carousel :item-count="4">
+    <Carousel :item-count="5">
       <AccountCard
         title="Yetirim Hesabi"
         description="(Altin, gumus, Platin)"
@@ -148,6 +150,53 @@
       >
         <IconBars />
       </AccountCard>
+       <Card>
+        <div class="flex gap-2 items-center">
+          <img class="h-4 rounded-full" src="https://www.papara.com/icon/apple-touch-icon.png" />
+          <p class="text-white/80 text-xs">Tum Varliklarim</p>
+        </div>
+        <div class="flex justify-between mb-6">
+          <p class="font-medium text-4xl text-white">{{ formatAmount(0) }}</p>
+          <Switch />
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between">
+            <span class="flex gap-2 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#df1529"/><g fill="#fff"><path d="m41.3 39l.1-5.4L36 32l5.4-1.6l-.1-5.4l3.3 4.3l5.4-1.6l-3.3 4.3l3.3 4.3l-5.4-1.6z"/><path d="M33.2 44c-6.6 0-11.9-5.4-11.9-12s5.3-12 11.9-12c2.5 0 4.8.8 6.8 2.1C37.3 19 33.3 17 28.8 17C20.6 17 14 23.7 14 32s6.6 15 14.8 15c4.5 0 8.5-2 11.2-5.1c-1.9 1.3-4.2 2.1-6.8 2.1"/></g></svg>
+              <p class="text-[#FBFBFB]/75 text-xs">Turk Lirasi Hesabi</p>
+            </span>
+            <p class="text-white">{{ formatAmount(0) }}</p>
+          </div>
+          <div class="flex justify-between">
+            <span class="flex gap-2 items-center">
+              <img class="h-4 w-4  border-white rounded-full" src="https://dkto9gpxgolik.cloudfront.net/icons/currencies/xau.svg" />
+              <p class="text-[#FBFBFB]/75 text-xs">Kiymetli Madenler</p>
+            </span>
+            <Icon icon="octicon:dash-16" :height="20" />
+
+          </div>
+          <div class="flex justify-between">
+            <span class="flex gap-2 items-center">
+                <div class="bg-[#0098C9] rounded-full p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24"><g fill="none" stroke="#fff" stroke-linecap="square" stroke-width="2"><path d="M21 21H3V3"/><path d="m6 14l5-5l4 4c.42-.421 1.549-1.547 2.715-2.71m1.592-1.588l1.697-1.692zm0 0l-.004.004m0 0l-1.588 1.584m1.588-1.584l-1.588 1.584M17 7h4v4"/></g></svg>
+                </div>
+              <p class="text-[#FBFBFB]/75 text-xs">Yatirim hesabi</p>
+            </span>
+            <Icon icon="octicon:dash-16" :height="20" />
+
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="flex gap-2 items-center">
+                <div class="bg-[#A14CCC] rounded-full p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 1024 1024"><path fill="#fff" d="m905.9 806.7l-40.2-248c-.6-3.9-4-6.7-7.9-6.7H596.2c-3.9 0-7.3 2.8-7.9 6.7l-40.2 248c-.1.4-.1.9-.1 1.3c0 4.4 3.6 8 8 8h342c.4 0 .9 0 1.3-.1c4.3-.7 7.3-4.8 6.6-9.2m-470.2-248c-.6-3.9-4-6.7-7.9-6.7H166.2c-3.9 0-7.3 2.8-7.9 6.7l-40.2 248c-.1.4-.1.9-.1 1.3c0 4.4 3.6 8 8 8h342c.4 0 .9 0 1.3-.1c4.4-.7 7.3-4.8 6.6-9.2zM342 472h342c.4 0 .9 0 1.3-.1c4.4-.7 7.3-4.8 6.6-9.2l-40.2-248c-.6-3.9-4-6.7-7.9-6.7H382.2c-3.9 0-7.3 2.8-7.9 6.7l-40.2 248c-.1.4-.1.9-.1 1.3c0 4.4 3.6 8 8 8"/></svg>
+                </div>
+              <p class="text-[#FBFBFB]/75 text-xs">Birikim Hesabi</p>
+            </span>
+            <Icon icon="octicon:dash-16" :height="20" />
+          </div>
+        </div>
+      </Card>
     </Carousel>
   </div>
 

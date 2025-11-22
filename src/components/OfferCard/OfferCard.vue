@@ -32,7 +32,7 @@
             </div>
             <img :src="icon" class="h-10 w-10" />
         </div>
-        <p class="text-xs text-center text-[#FDFEFF/1] leading-3">{{  text }}</p>
+        <p class="text-xs text-center text-[#FBFBFB]/75 leading-3">{{  text }}</p>
     </button>
 </template>
 
