@@ -1,5 +1,5 @@
 <script setup>
-    import { defineProps } from 'vue'
+    import { defineProps , defineEmits} from 'vue'
 
     import { Icon } from "@iconify/vue";
 
@@ -18,10 +18,13 @@
             default: 0
         }
     })
+
+    const emit = defineEmits(['click'])
+
 </script>
 
 <template>
-    <div :class="[ 
+    <button @click="emit('click')" :class="[ 
         'relative rounded-xl grow-0 border border-[#37383C] p-3',
         {
             'bg-[#323232]': fill
@@ -31,8 +34,7 @@
             {{ notificationCount }}
         </p>
         <Icon :icon="icon" :height="24" color="#fff"  />
-
-    </div>
+    </button>
 
 </template>
 
