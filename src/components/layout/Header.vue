@@ -5,7 +5,7 @@
 <template>
   <header class="flex justify-between p-5">
     <div class="flex gap-2">
-      <IconButton :notification-count="7" icon="mynaui:menu" :fill="true" />
+      <IconButton variant="primary" :notification-count="7" icon="mynaui:menu"/>
       <IconButton icon="jam:messages" />
     </div>
     <div class="flex gap-2 items-end text-xs">

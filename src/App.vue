@@ -9,6 +9,7 @@
   import PromoCard from '@/components/PromoCard'
   import ActionCard from '@/components/ActionCard'
   import AccountCard from '@/components/AccountCard'
+  import IconButton from '@/components/IconButton'
 
   import IconPreciousMetals from '@/components/icons/IconPreciousMetals.vue'
   import IconAnalytics from '@/components/icons/IconAnalytics.vue'
@@ -117,7 +118,31 @@
   </div>
 
   <div class="mt-4 pl-4">
-    <Carousel :item-count="5">
+    <Carousel :item-count="6">
+      <Card>
+        <div class="flex flex-col justify-between grow">
+          <div class="flex gap-2 items-center pb-4 border-b border-b-gray-600">
+             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#df1529"/><g fill="#fff"><path d="m41.3 39l.1-5.4L36 32l5.4-1.6l-.1-5.4l3.3 4.3l5.4-1.6l-3.3 4.3l3.3 4.3l-5.4-1.6z"/><path d="M33.2 44c-6.6 0-11.9-5.4-11.9-12s5.3-12 11.9-12c2.5 0 4.8.8 6.8 2.1C37.3 19 33.3 17 28.8 17C20.6 17 14 23.7 14 32s6.6 15 14.8 15c4.5 0 8.5-2 11.2-5.1c-1.9 1.3-4.2 2.1-6.8 2.1"/></g></svg>
+             <p class="text-[#FBFBFB]/75 text-xs">Turk Lirasi Hesabi</p>
+          </div>
+          <div class="py-4 grow">
+           <span>
+             <p class="font-medium text-4xl text-white">{{ formatAmount(0) }}</p>
+             <p class="text-xs mt-1">IBAN: B124 Y123 G463</p>
+           </span>
+          </div>
+          <div class="flex gap-2">
+               <button @click="emit('click')" class="w-full justify-between items-center inline-flex rounded-xl border-[#37383C] border p-3 bg-[#121317]">
+                 <span class="text-white">Yatir / Cek</span>
+                 <IconButton variant="secondary" size="small" icon="fluent:wallet-32-regular" />
+             </button>
+                <button @click="emit('click')" class="w-full justify-between items-center inline-flex rounded-xl border-[#37383C] border p-3 bg-[#121317]">
+                  <span class="text-white">Gunder</span>
+                  <IconButton variant="secondary" size="small" icon="fa-send-o" />
+              </button>
+          </div>
+        </div>
+      </Card>
       <AccountCard
         title="Yetirim Hesabi"
         description="(Altin, gumus, Platin)"
@@ -151,11 +176,11 @@
         <IconBars />
       </AccountCard>
        <Card>
-        <div class="flex gap-2 items-center">
+        <div class="flex gap-2 items-center pb-4">
           <img class="h-4 rounded-full" src="https://www.papara.com/icon/apple-touch-icon.png" />
           <p class="text-white/80 text-xs">Tum Varliklarim</p>
         </div>
-        <div class="flex justify-between mb-6">
+        <div class="flex justify-between mb-4">
           <p class="font-medium text-4xl text-white">{{ formatAmount(0) }}</p>
           <Switch />
         </div>
