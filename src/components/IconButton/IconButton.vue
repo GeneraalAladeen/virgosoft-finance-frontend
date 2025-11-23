@@ -36,7 +36,7 @@ const emit = defineEmits(['click'])
             {
                 'bg-[#323232]': variant === 'primary',
                 'bg-[#ffffff]': variant === 'secondary',
-                '': variant === 'neutral',
+                'bg-[#121317]': variant === 'neutral',
             },
             {
                 'p-3': size === 'medium',
