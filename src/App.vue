@@ -9,11 +9,13 @@ import Carousel from '@/components/common/Carousel.vue'
 import PromoCard from '@/components/PromoCard'
 import ActionCard from '@/components/ActionCard'
 import AccountCard from '@/components/AccountCard'
+import CashbackCard from '@/components/CashbackCard'
 import IconButton from '@/components/IconButton'
 
 import IconPreciousMetals from '@/components/icons/IconPreciousMetals.vue'
 import IconAnalytics from '@/components/icons/IconAnalytics.vue'
 import IconBars from '@/components/icons/IconBars.vue'
+import IconVendors from '@/components/icons/IconVendors.vue'
 
 import superman from '@/assets/images/superman.svg'
 import garanti from '@/assets/images/garanti.png'
@@ -24,6 +26,7 @@ import gift from '@/assets/images/gift.png'
 import money from '@/assets/images/money.png'
 import bar from '@/assets/images/bar.png'
 import jar from '@/assets/images/jar.png'
+import cashback from '@/assets/images/cashback.png'
 
 import { Icon } from '@iconify/vue'
 import { computed, ref } from 'vue'
@@ -346,28 +349,71 @@ const offers = [
                         <Icon icon="akar-icons:question" color="#fff" />
                     </div>
                     <div class="py-2 flex justify-between items-center">
-                        <p class="text-xl text-white font-medium">{{ formatAmount(500)}} kaldi</p>
-                        <p class="text-xs text-[#6A6B6F]"><span class="text-white">%0</span> Tamamlandi</p>
+                        <p class="text-xl text-white font-medium">{{ formatAmount(500) }} kaldi</p>
+                        <p class="text-xs text-[#6A6B6F]">
+                            <span class="text-white">%0</span> Tamamlandi
+                        </p>
                     </div>
                 </div>
                 <div class="p-4">
                     <Carousel :item-count="2" :show-indicators="false">
-                        <AccountCard
-                            title="Yetirim Hesabi"
-                            description="(Altin, gumus, Platin)"
-                            buttonLabel="Yatirim hesabi Olustur"
-                            :image="stat"
-                        >
-                            <IconAnalytics />
-                        </AccountCard>
-                        <AccountCard
-                            title="Dolar Hesabi"
-                            description="(Altin, gumus, Platin)"
-                            buttonLabel="Yatirim hesabi Olustur"
-                            :image="web"
-                        >
-                            <Icon icon="circle-flags:us" :height="24" />
-                        </AccountCard>
+                        <CashbackCard :image="cashback">
+                            <template #header>
+                                <div class="flex items-center gap-2">
+                                    <img
+                                        src="https://dkto9gpxgolik.cloudfront.net/icons/externalcardacceptoricons/72fc7160-5925-48df-8ad1-d3eadd616a52.png"
+                                        class="h-10 rounded-full"
+                                    />
+                                    <div>
+                                        <p class="text-white font-medium text-sm w-10">Ekim 2025</p>
+                                    </div>
+                                </div>
+                            </template>
+                            <template #content>
+                                <div class="w-20">
+                                    <div
+                                        class="p-2 leading-8 text-3xl w-fit rounded-md bg-[#F6EFA4] text-black font-bold"
+                                    >
+                                        ₺960
+                                    </div>
+                                    <p class="leading-5 text-base text-white">aninda hakit kazan</p>
+                                </div>
+                            </template>
+                            <template #footer>
+                                <IconVendors />
+                            </template>
+                        </CashbackCard>
+                        <CashbackCard :image="cashback" variant="secondary">
+                            <template #header>
+                                <div class="flex items-center gap-2">
+                                    <img
+                                        src="https://dkto9gpxgolik.cloudfront.net/icons/externalcardacceptoricons/72fc7160-5925-48df-8ad1-d3eadd616a52.png"
+                                        class="h-10 rounded-full"
+                                    />
+                                    <div>
+                                        <p class="text-black font-medium text-sm w-10">Ekim 2025</p>
+                                    </div>
+                                </div>
+                            </template>
+                            <template #content>
+                                <div class="w-20">
+                                    <div
+                                        class="p-2 leading-8 text-3xl w-fit rounded-md bg-[#F6EFA4] text-black font-bold"
+                                    >
+                                        ₺960
+                                    </div>
+                                    <p class="leading-5 text-base text-black">aninda hakit kazan</p>
+                                </div>
+                            </template>
+                            <template #footer>
+                                <button
+                                    class="w-full justify-between items-center inline-flex rounded-xl border-[#37383C] border p-3 bg-[#121317]"
+                                >
+                                    <span class="text-white">Buy</span>
+                                    <Icon icon="tabler:chevron-right" :height="22" color="#fff" />
+                                </button>
+                            </template>
+                        </CashbackCard>
                     </Carousel>
                 </div>
             </div>
