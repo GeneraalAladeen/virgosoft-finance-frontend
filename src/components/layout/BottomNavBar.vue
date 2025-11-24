@@ -5,7 +5,6 @@ import Modal from '@/components/common/Modal.vue'
 import ListItem from '@/components/common/ListItem.vue'
 
 const showModal = ref(false)
-
 const selectedItem = ref('Home')
 
 const navItems = [
@@ -17,7 +16,7 @@ const navItems = [
     {
         icon: 'ic:baseline-qr-code',
         name: 'QR islemleri',
-        route: 'qr',
+        route: '',
     },
     {
         icon: 'fa-send-o',
@@ -32,7 +31,7 @@ const navItems = [
     {
         icon: 'zondicons:credit-card',
         name: 'Papara Card',
-        route: '',
+        route: 'qr',
     },
 ]
 
@@ -63,13 +62,20 @@ const selectItem = (item) => {
                 <span class="text-[10px]">{{ item.name }}</span>
             </button>
         </div>
-        <Modal v-model="showModal" title="Basic Modal">
-            <div class="pl-4">
+        <Modal v-model="showModal">
+            <div v-if="selectedItem == 'Para Transferi'" class="pl-4">
                 <ListItem icon="fa-send-o">Para Gonder</ListItem>
                 <ListItem icon="cil:transfer">Para Iste</ListItem>
                 <ListItem icon="streamline-plump:web">Yurt Didi Para Transferi</ListItem>
                 <ListItem icon="tdesign:secured">Guvenli Odeme Islemi</ListItem>
                 <ListItem icon="pajamas:retry">Dezenli Transfer</ListItem>
+            </div>
+
+            <div v-else="selectedItem == 'QR islemleri'" class="pl-4">
+                <ListItem icon="mdi:qrcode-plus">QR ile Odeme Yap</ListItem>
+                <ListItem icon="mdi:qrcode-minus">QR ile Odeme AI</ListItem>
+                <ListItem icon="iconoir:card-reader">QR ile ATM'den Para Cek</ListItem>
+                <ListItem icon="iconoir:card-reader">QR ile ATM'den Para Yatir</ListItem>
             </div>
         </Modal>
     </nav>
