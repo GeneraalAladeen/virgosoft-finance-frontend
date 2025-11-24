@@ -10,13 +10,13 @@ Make sure the latest version of node is available on system. i.e (node >=22.12.0
 Clone the repository
 
 ```sh
-git https://github.com/GeneraalAladeen/pimono-finance-ui.git
+git git@github.com:GeneraalAladeen/virgosoft-finance-frontend.git
 ```
 
 Switch to repo folder
 
 ```sh
-cd pimono-finance-ui
+cd virgosoft-finance-frontend
 ```
 
 Install dependencies
