@@ -20,7 +20,7 @@
                 >
                     <slot></slot>
                 </div>
-                <div class="text-center">
+                <div class="text-center mb-6 ">
                     <button
                         v-if="showCloseButton"
                         @click="closeModal"
@@ -35,7 +35,7 @@
                             />
                         </svg>
                     </button>
-                    <p>Anladim</p>
+                    <p class="text-white pt-1 font-thin">Anladim</p>
                 </div>
             </div>
         </Transition>

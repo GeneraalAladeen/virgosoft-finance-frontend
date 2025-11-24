@@ -16,7 +16,7 @@ const navItems = [
     {
         icon: 'iconamoon:home',
         name: 'Home',
-        route: '/home',
+        route: '/',
     },
     {
         icon: 'ic:baseline-qr-code',
@@ -48,10 +48,10 @@ const selectItem = (item) => {
     }
 
     if (item.route === '') {
-        showModal.value = true
-    } else {
-        router.push(item.route)
+        return showModal.value = true
     }
+
+    router.push(item.route)
 }
 </script>
 
@@ -90,40 +90,42 @@ const selectItem = (item) => {
             </div>
         </Modal>
         <StatModal v-model="statModal">
-            <img :src="chart" class="w-3/4" />
-            <div class="flex flex-wrap gap-4 w-3/4 text-sm justify-center">
-                <div class="flex gap-2 items-center">
-                    <div class="size-4 rounded-sm bg-[#27AA73]"></div>
-                    <p class="text-white">Ulasim Kartian</p>
+            <div class="w-3/4 flex flex-col gap-6">
+                <img :src="chart" />
+                <div class="flex flex-wrap gap-4 text-sm justify-center">
+                    <div class="flex gap-2 items-center">
+                        <div class="size-4 rounded-sm bg-[#27AA73]"></div>
+                        <p class="text-white">Ulasim Kartian</p>
+                    </div>
+                    <div class="flex gap-2 items-center">
+                        <div class="size-4 rounded-sm bg-[#6768F0]"></div>
+                        <p class="text-white">Oyun & Dijital Kod</p>
+                    </div>
+                    <div class="flex gap-2 items-center">
+                        <div class="size-4 rounded-smd bg-[#126C95]"></div>
+                        <p class="text-white">Sans Oyunlan</p>
+                    </div>
+                    <div class="flex gap-2 items-center">
+                        <div class="size-4 rounded-sm bg-red-500"></div>
+                        <p class="text-white">Badis</p>
+                    </div>
+                    <div class="flex gap-2 items-center">
+                        <div class="size-4 rounded-smd bg-[#4EC4D5]"></div>
+                        <p class="text-white">Findeks</p>
+                    </div>
+                    <div class="flex gap-2 items-center">
+                        <div class="size-4 rounded-sm bg-[#12859F]"></div>
+                        <p class="text-white">Havalimani Hizmetieri</p>
+                    </div>
+                    <div class="flex gap-2 items-center">
+                        <div class="size-4 rounded-sm bg-[#D47E0D]"></div>
+                        <p class="text-white">GSM TL/Paket</p>
+                    </div>
                 </div>
-                <div class="flex gap-2 items-center">
-                    <div class="size-4 rounded-sm bg-[#6768F0]"></div>
-                    <p class="text-white">Oyun & Dijital Kod</p>
-                </div>
-                <div class="flex gap-2 items-center">
-                    <div class="size-4 rounded-smd bg-[#126C95]"></div>
-                    <p class="text-white">Sans Oyunlan</p>
-                </div>
-                <div class="flex gap-2 items-center">
-                    <div class="size-4 rounded-sm bg-red-500"></div>
-                    <p class="text-white">Badis</p>
-                </div>
-                <div class="flex gap-2 items-center">
-                    <div class="size-4 rounded-smd bg-[#4EC4D5]"></div>
-                    <p class="text-white">Findeks</p>
-                </div>
-                <div class="flex gap-2 items-center">
-                    <div class="size-4 rounded-sm bg-[#12859F]"></div>
-                    <p class="text-white">Havalimani Hizmetieri</p>
-                </div>
-                <div class="flex gap-2 items-center">
-                    <div class="size-4 rounded-sm bg-[#D47E0D]"></div>
-                    <p class="text-white">GSM TL/Paket</p>
-                </div>
+                <p class="leading-7.5 mt-6 text-[26px] text-center font-medium text-white">
+                    Odemelerini aylik olarak kategori bazli goruntuleyebilirsin
+                </p>
             </div>
-            <p class="mt-6 text-3xl text-center font-semibold text-white">
-                Odemelerini aylik olarak kategori bazli goruntuleyebilirsin
-            </p>
         </StatModal>
     </nav>
 </template>
